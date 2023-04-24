@@ -3,8 +3,8 @@
 Club.destroy_all
 #Club data
 arsenal = Club.create(name: 'Arsenal', location: 'Emirates Stadium, London', titles_won: 13, stadium_cap: 60260, image: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg', current_manager: 'Mikel Arteta')
-man_city = Club.create(name: 'Manchester City', location: 'Etihad Stadium, Manchester', titles_won: 8, stadium_cap: 55017, image: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg', current_manager: 'Pep Guardiola')
-man_united = Club.create(name: 'Manchester United', location: 'Old Trafford, Manchester', titles_won: 20, stadium_cap: 74879, image: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg', current_manager: 'Eric ten Hag')
+manchester_city = Club.create(name: 'Manchester City', location: 'Etihad Stadium, Manchester', titles_won: 8, stadium_cap: 55017, image: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg', current_manager: 'Pep Guardiola')
+manchester_united = Club.create(name: 'Manchester United', location: 'Old Trafford, Manchester', titles_won: 20, stadium_cap: 74879, image: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg', current_manager: 'Eric ten Hag')
 newcastle_utd = Club.create(name: 'Newcastle United', location: 'St. James Park, Newcastle upon Tyne', titles_won: 4, stadium_cap: 52305, image: 'https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg', current_manager: 'Eddie Howe')
 liverpool = Club.create(name: 'Liverpool', location: 'Anfield, Liverpool', titles_won: 19, stadium_cap: 53394, image: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg', current_manager: 'Jurgen Klopp')
 puts "#{ Club.count } Clubs created"
@@ -21,6 +21,13 @@ netherlands = NationalTeam.create(name: 'Netherlands', coach: 'Ronald Koeman', l
 italy = NationalTeam.create(name: 'Italy', coach: 'Roberto Mancini', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_Italy_National_Football_Team_-_2023.svg/320px-Logo_Italy_National_Football_Team_-_2023.svg.png')
 spain = NationalTeam.create(name: 'Spain', coach: 'Luis de la Fuente', logo: 'https://upload.wikimedia.org/wikipedia/en/3/31/Spain_National_Football_Team_badge.png')
 wales = NationalTeam.create(name: 'Wales', coach: 'Robert Page', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Wales_national_football_team_logo.svg/800px-Wales_national_football_team_logo.svg.png')
+
+norway = NationalTeam.create(name: 'Norway', coach: 'Ståle Solbakken', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Norway_national_football_team_logo.svg/800px-Norway_national_football_team_logo.svg.png')
+scotland = NationalTeam.create(name: 'Scotland', coach: 'Steve Clarke', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Scotland_national_football_team_logo_2014.svg/800px-Scotland_national_football_team_logo_2014.svg.png')
+switzerland = NationalTeam.create(name: 'Switzerland', coach: 'Murat Yakin', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_Switzerland_%28Pantone%29.svg/800px-Flag_of_Switzerland_%28Pantone%29.svg.png')
+
+
+
 
 puts "#{ NationaTeam.count } National Teams created"
 
@@ -103,8 +110,143 @@ puts "#{Player.count} Liverpool Players"
 #dont forget to create 2 users - should be admin
 User.destroy_all
 u1 = User.create :email => 'aa@ga.co', :password => 'chicken' #, :admin => true - to make admin
-u2 = User.create :email => 'ab@ga.co', :password => 'chicken'
+u2 = User.create :email => 'ac@ga.co', :password => 'chicken'
 puts "#{ User.count } users"
 
 
 ######## Associations ########
+#argentina 
+
+argentina.players << man_utd4 #lisandro Martinez
+manchester_united.players << man_utd4
+
+#belgium
+belgium.players << man_city7 #Kevin de B
+manchester_city.players << man_city7
+
+#brazil
+brazil.players << arse4 #gabriel Magalhaes
+arsenal.players << arse4
+
+brazil.players << arse10 #gabriel jesus
+arsenal.players << arse10
+
+brazil.players << arse11 #garbiel Martinelli
+arsenal.players << arse11
+
+brazil.players << man_city1 #ederson
+manchester_city.players << man_city1
+
+brazil.players << man_utd6 #casemiro
+manchester_united.players << man_utd6
+
+brazil.players << man_utd11 #anthony
+manchester_united.players << man_utd11
+
+brazil.players << new_utd9 #bruno guimaraes
+newcastle_utd.players << new_utd9
+
+brazil.players << liv1 #alison becker
+liverpool.players << liv1
+
+brazil.players << liv6 #fabinho
+liverpool.players << liv6
+
+#England
+england.players << arse1 #ramsdale
+arsenal.players << arse1
+
+england.players << arse5 #holding
+arsenal.players << arse5 
+
+england.players << arse9 #saka
+arsenal.players << arse9
+
+england.players << man_city2 #walker
+manchester_city.players << man_city2
+
+england.players << man_city9 #foden
+manchester_city.players << man_city9
+
+england.players << man_utd5 #shaw
+manchester_united.players << man_utd5
+
+england.players << man_utd9 #rashford
+manchester_united.players << man_utd9
+
+england.players << new_utd1 #pope
+newcastle_utd.players << new_utd1
+
+england.players << new_utd2 #trippier
+newcastle_utd.players << new_utd2
+
+england.players << new_utd11 #wilson
+newcastle_utd.players << new_utd11
+
+england.players << liv2 # arnold
+liverpool.players << liv2
+
+england.players << liv4 # gomez
+liverpool.players << liv4
+
+england.players << liv7 # henderson
+liverpool.players << liv7
+
+#france
+france.players << man_utd10 #martial
+manchester_united.players << man_utd10
+
+france.players << new_utd10 #maximin
+newcastle_utd.players << new_utd10
+
+#germany
+germany.players << man_city8 #gundogan
+manchester_city.players << man_city8
+
+#netherland
+netherlands.players << man_city5 #ake
+manchester_city.players << man_city5
+
+netherlands.players << liv3 #van dijk
+liverpool.players << liv3
+
+netherlands.players << new_utd3 #botman
+newcastle_utd.players << new_utd3
+
+#norway
+norway.players << arse8 #odegard
+arsenal.players << arse8
+
+norway.players << man_city11 #haaland
+manchester_city.players << man_city11
+
+#portugal
+portugal.players << man_city3 # dias
+manchester_city.players << man_city3
+
+portugal.players << man_utd8 #fernandes
+manchester_united.players << man_utd8
+
+portugal.players << liv8 # jota
+liverpool.players << liv8
+
+#scotland
+scotland.players << arse3 #tierney
+arsenal.players << arse3
+
+scotland.players << liv5 #robertson
+liverpool.players << liv5
+
+#spain
+spain.players << man_city4 #laporte
+manchester_city.players << man_city4
+
+spain.players << man_city6 #rodri
+manchester_city.players << man_city6
+
+#switzerland
+switzerland.players << arse7 #xhaka
+arsenal.players << arse7
+
+switzerland.players << new_utd4
+newcastle_utd.players << new_utd4
