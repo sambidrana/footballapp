@@ -17,7 +17,9 @@ class SessionController < ApplicationController
     user = User.find_by :email => params[:email]
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      # redirect_to root_path - - - - - - - --  - 
+      redirect_to clubs_index_path
+
     else
       # @error = "Invalid user name or password" wrong way of doing it and display it new.html.erb sessiaoin
       flash[:error] = "Invalid username or password" #same as saying session[:error] = "" but it will disappear in the next page

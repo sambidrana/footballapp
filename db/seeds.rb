@@ -1,7 +1,7 @@
 
 #2 users - should be admin, atleast 1 should be admin
 User.destroy_all
-u1 = User.create :email => 'aa@ga.co', :password_digest => 'chicken' #, :admin => true - to make admin
+u1 = User.create :email => 'aa@ga.co', :password_digest => 'chicken' #:admin => true #- to make admin - doing it from the console
 u2 = User.create :email => 'ac@ga.co', :password_digest => 'chicken'
 puts "#{ User.count } users"
 

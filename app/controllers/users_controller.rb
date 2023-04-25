@@ -13,7 +13,8 @@ class UsersController < ApplicationController
         @user = User.new user_params
         if @user.save
           session[:user_id] = @user.id #user should be taken to login page
-          redirect_to root_path
+          # redirect_to root_path #change the path aftger user logs in ---- --- ---
+          redirect_to clubs_index_path
         else
           render :new #putting the @ means the content filled will be shown again
         end

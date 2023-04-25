@@ -1,0 +1,19 @@
+<h1> <%= @club.name %> </h1>
+<h2> <%= @club.location %> </h2>
+
+<%= image_tag @club.logo if @club.logo.present? %>
+
+<ul>
+    <li>Current Manager: <%= @club.current_manager %>  </li>
+    <li>Titles Won: <%= @club.titles_won %>  </li>
+    <li>Stadium Capacity: <%= @club.stadium_cap %>  </li>
+</ul>
+
+<h3>Current Squad</h3>
+<ul>
+    <% @players.each do |player| %>
+    <li> <%= link_to player.name, player_path(player) %>  </li> 
+    <% end%>
+</ul>
+
+ 

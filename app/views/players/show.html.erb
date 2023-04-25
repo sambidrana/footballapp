@@ -1,0 +1,11 @@
+
+<%= image_tag @player.image if @player.image.present? %>
+<h1><%= @player.name %></h1>
+
+<ul>
+    <li>Position: <%= @player.position %> </li>
+    <li>Club Appreaences: <%= @player.appearances %>  </li>
+    <li>DOB: <%= @player.dob %>  </li>
+    <li>Career goals: <%= @player.career_goals %>  </li>
+</ul>
+
