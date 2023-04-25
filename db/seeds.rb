@@ -1,7 +1,12 @@
 
+#2 users - should be admin, atleast 1 should be admin
+User.destroy_all
+u1 = User.create :email => 'aa@ga.co', :password => 'chicken' #, :admin => true - to make admin
+u2 = User.create :email => 'ac@ga.co', :password => 'chicken'
+puts "#{ User.count } users"
 
-Club.destroy_all
 #Club data
+Club.destroy_all
 arsenal = Club.create(name: 'Arsenal', location: 'Emirates Stadium, London', titles_won: 13, stadium_cap: 60260, image: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg', current_manager: 'Mikel Arteta')
 manchester_city = Club.create(name: 'Manchester City', location: 'Etihad Stadium, Manchester', titles_won: 8, stadium_cap: 55017, image: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg', current_manager: 'Pep Guardiola')
 manchester_united = Club.create(name: 'Manchester United', location: 'Old Trafford, Manchester', titles_won: 20, stadium_cap: 74879, image: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg', current_manager: 'Eric ten Hag')
@@ -10,25 +15,21 @@ liverpool = Club.create(name: 'Liverpool', location: 'Anfield, Liverpool', title
 puts "#{ Club.count } Clubs created"
 
 #National team data
-england = NationalTeam.create(name: 'England', coach: 'Gareth Southgate', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/England_national_football_team_crest.svg/800px-England_national_football_team_crest.svg.png')
-argentina = NationalTeam.create(name: 'Argentina', coach: 'Lionel Scaloni', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Argentina_national_football_team_logo.svg/320px-Argentina_national_football_team_logo.svg.png')
-germany = NationalTeam.create(name: 'Germany', coach: 'Hansi Flick', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/DFBEagle.svg/800px-DFBEagle.svg.png')
-france = NationalTeam.create(name: 'France', coach: 'Didier Deschamps', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/12/France_national_football_team_seal.svg/320px-France_national_football_team_seal.svg.png')
-portugal = NationalTeam.create(name: 'Portugal', coach: 'Roberto Martínez', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Portuguese_Football_Federation.svg/800px-Portuguese_Football_Federation.svg.png')
-brazil = NationalTeam.create(name: 'Brazil', coach: 'Ramon Menezes', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Brazilian_Football_Confederation_logo.svg/800px-Brazilian_Football_Confederation_logo.svg.png')
-belgium = NationalTeam.create(name: 'Belgium', coach: 'Domenico Tedesco', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Royal_Belgian_FA_logo_2019.svg/320px-Royal_Belgian_FA_logo_2019.svg.png')
-netherlands = NationalTeam.create(name: 'Netherlands', coach: 'Ronald Koeman', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Netherlands_national_football_team_logo.svg/800px-Netherlands_national_football_team_logo.svg.png')
-italy = NationalTeam.create(name: 'Italy', coach: 'Roberto Mancini', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_Italy_National_Football_Team_-_2023.svg/320px-Logo_Italy_National_Football_Team_-_2023.svg.png')
-spain = NationalTeam.create(name: 'Spain', coach: 'Luis de la Fuente', logo: 'https://upload.wikimedia.org/wikipedia/en/3/31/Spain_National_Football_Team_badge.png')
-wales = NationalTeam.create(name: 'Wales', coach: 'Robert Page', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Wales_national_football_team_logo.svg/800px-Wales_national_football_team_logo.svg.png')
-
-norway = NationalTeam.create(name: 'Norway', coach: 'Ståle Solbakken', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Norway_national_football_team_logo.svg/800px-Norway_national_football_team_logo.svg.png')
-scotland = NationalTeam.create(name: 'Scotland', coach: 'Steve Clarke', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Scotland_national_football_team_logo_2014.svg/800px-Scotland_national_football_team_logo_2014.svg.png')
-switzerland = NationalTeam.create(name: 'Switzerland', coach: 'Murat Yakin', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_Switzerland_%28Pantone%29.svg/800px-Flag_of_Switzerland_%28Pantone%29.svg.png')
-
-
-
-
+NathonalTeam.destroy_all
+england = NationalTeam.create(name: 'England', coach: 'Gareth Southgate', cups_won: 5, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/England_national_football_team_crest.svg/800px-England_national_football_team_crest.svg.png')
+argentina = NationalTeam.create(name: 'Argentina', coach: 'Lionel Scaloni', cups_won: 1, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Argentina_national_football_team_logo.svg/320px-Argentina_national_football_team_logo.svg.png')
+germany = NationalTeam.create(name: 'Germany', coach: 'Hansi Flick', cups_won: 14, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/DFBEagle.svg/800px-DFBEagle.svg.png')
+france = NationalTeam.create(name: 'France', coach: 'Didier Deschamps', cups_won: 2, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/12/France_national_football_team_seal.svg/320px-France_national_football_team_seal.svg.png')
+portugal = NationalTeam.create(name: 'Portugal', coach: 'Roberto Martínez', cups_won: 9, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Portuguese_Football_Federation.svg/800px-Portuguese_Football_Federation.svg.png')
+brazil = NationalTeam.create(name: 'Brazil', coach: 'Ramon Menezes', cups_won: 3, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Brazilian_Football_Confederation_logo.svg/800px-Brazilian_Football_Confederation_logo.svg.png')
+belgium = NationalTeam.create(name: 'Belgium', coach: 'Domenico Tedesco', cups_won: 4, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Royal_Belgian_FA_logo_2019.svg/320px-Royal_Belgian_FA_logo_2019.svg.png')
+netherlands = NationalTeam.create(name: 'Netherlands', coach: 'Ronald Koeman', cups_won: 6, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Netherlands_national_football_team_logo.svg/800px-Netherlands_national_football_team_logo.svg.png')
+italy = NationalTeam.create(name: 'Italy', coach: 'Roberto Mancini', cups_won: 8, logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_Italy_National_Football_Team_-_2023.svg/320px-Logo_Italy_National_Football_Team_-_2023.svg.png')
+spain = NationalTeam.create(name: 'Spain', coach: 'Luis de la Fuente', cups_won: 10, logo: 'https://upload.wikimedia.org/wikipedia/en/3/31/Spain_National_Football_Team_badge.png')
+wales = NationalTeam.create(name: 'Wales', coach: 'Robert Page', cups_won: 26, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Wales_national_football_team_logo.svg/800px-Wales_national_football_team_logo.svg.png')
+norway = NationalTeam.create(name: 'Norway', coach: 'Ståle Solbakken', cups_won: 44, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Norway_national_football_team_logo.svg/800px-Norway_national_football_team_logo.svg.png')
+scotland = NationalTeam.create(name: 'Scotland', coach: 'Steve Clarke', cups_won: 36, logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Scotland_national_football_team_logo_2014.svg/800px-Scotland_national_football_team_logo_2014.svg.png')
+switzerland = NationalTeam.create(name: 'Switzerland', coach: 'Murat Yakin', cups_won: 12, logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_Switzerland_%28Pantone%29.svg/800px-Flag_of_Switzerland_%28Pantone%29.svg.png')
 puts "#{ NationaTeam.count } National Teams created"
 
 ############################
@@ -107,11 +108,7 @@ liv10 = Player.create(name: 'Mohamed Salah', position: 'Right winger', career_go
 liv11 = Player.create(name: 'Darwin Nunez', position: 'Center forward', career_goals: 9, appearances: 24, dob: '1999-06-24', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Darwin_N%C3%BA%C3%B1ez_%28cropped%29.jpg/220px-Darwin_N%C3%BA%C3%B1ez_%28cropped%29.jpg')
 puts "#{Player.count} Liverpool Players"
 
-#dont forget to create 2 users - should be admin
-User.destroy_all
-u1 = User.create :email => 'aa@ga.co', :password => 'chicken' #, :admin => true - to make admin
-u2 = User.create :email => 'ac@ga.co', :password => 'chicken'
-puts "#{ User.count } users"
+
 
 
 ######## Associations ########
