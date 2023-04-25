@@ -7,5 +7,11 @@
     <li>Club Appreaences: <%= @player.appearances %>  </li>
     <li>DOB: <%= @player.dob %>  </li>
     <li>Career goals: <%= @player.career_goals %>  </li>
+    
+ 
+
 </ul>
 
+<% if @nationalteam.present?  %>
+  <%= link_to @nationalteam.name, national_team_path(@nationalteam.id) %>
+<% end %>

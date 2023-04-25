@@ -1,0 +1,7 @@
+<h1>All National Teams</h1>
+
+<ul>
+  <% @national_teams.each do |national_team| %>
+    <li><%= link_to national_team.name, national_team_path(national_team) %></li>
+  <% end %>
+</ul>

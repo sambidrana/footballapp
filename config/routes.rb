@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'national_teams/index'
+  # get 'national_teams/show'
   # get 'players/index'
   # get 'players/new'
   # get 'players/edit'
@@ -10,11 +12,19 @@ Rails.application.routes.draw do
   # get 'pages/home'
   root :to => 'pages#home' # for home page
  
+  # get '/nationalteams/:id', to: 'nationalteams#show', as: 'nationalteam'
+
+  # get '/nationalteams', to: 'national_teams#index'
+  # get '/nationalteams/:id', to: 'national_teams#show'
+
 
   
   resources :users
   resources :clubs
   resources :players
+  # resources :nationalteams
+  resources :national_teams, only: [:index, :show]
+
   
   get '/login' => 'session#new' #you get 1 session per browser so it has to be singular - just a convention
   post '/login' => 'session#create'

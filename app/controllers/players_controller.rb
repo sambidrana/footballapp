@@ -10,5 +10,6 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find params[:id]
+    @nationalteam = @player.national_team
   end
 end
