@@ -1,0 +1,20 @@
+<h1>Login Session</h1>
+
+
+<%# form_for is only for CRUD - if you are creating or dele.... You want something that doesnt create %>
+
+<%# @error  -wrong way of dong it coming from session controller%>
+<% if flash[:error].present?%>
+    <h2>
+         <%= flash[:error] %>
+    </h2>
+<% end%>
+<%= form_tag login_path do %><%#when they login I wan ta POST requset # no form helper for form tag%>
+    <%= label_tag :email %>
+    <%= email_field_tag :email %>
+
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+
+    <%= submit_tag "Sign In" %>
+<% end%>
