@@ -1,4 +1,10 @@
 
+<nav>
+    <%= link_to "Premier League Clubs", clubs_path	 %> |
+    <%= link_to "National Teams", national_teams_path %> 
+</nav>
+
+
 <%= image_tag @player.image if @player.image.present? %>
 <h1><%= @player.name %></h1>
 
