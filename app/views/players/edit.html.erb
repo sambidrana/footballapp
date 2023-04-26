@@ -1,3 +1,5 @@
-<h1>Players#edit</h1>
+<h1>Edit Player</h1>
 
 <%= render :partial => 'form' %>
+
+<%= link_to "Delete Player", @player, :method => :delete, :data => { :confirm => 'Are you sure?' } %>

@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   
   get 'national_teams/edit', to: 'national_teams#edit', as: :edit_national_teams
   get 'national_teams/editteam/:id', to: 'national_teams#editteam', as: :edit_national_team
-  resources :national_teams, only: [:index, :show, :update ]  #:edit
+  # resources :national_teams, only: [:index, :show, :update ]  #:edit
+  resources :national_teams
   
   get 'clubs/editclub/:id', to: 'clubs#editclub', as: :editclub_club
 

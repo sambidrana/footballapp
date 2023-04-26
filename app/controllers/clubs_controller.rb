@@ -1,10 +1,16 @@
 class ClubsController < ApplicationController
   before_action :check_for_admin, :only => [:edit]
   def index
-    @clubs = Club.all
+    @clubs = Club.all.order(:name)
   end
 
   def new
+    @club = Club.new
+  end
+
+  def create
+    club = Club.create club_params
+    redirect_to club #change later to add new player page
   end
 
   def show
@@ -14,7 +20,7 @@ class ClubsController < ApplicationController
   end
 
   def edit
-    @clubs = Club.all
+    @clubs = Club.all.order(:name)
   end
 
   def editclub
@@ -25,6 +31,12 @@ class ClubsController < ApplicationController
     club = Club.find params[:id]
     club.update club_params
     redirect_to club
+  end
+
+  def destroy
+    club = Club.find params[:id]
+    club.destroy
+    redirect_to clubs_path
   end
 
   private

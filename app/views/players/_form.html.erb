@@ -1,3 +1,8 @@
+
+<nav>
+    <%= link_to "Home", clubs_index_path %>
+</nav>
+
 <%= form_for @player do |f| %>
  <%= f.label :name %>
     <%= f.text_field :name %>
@@ -16,6 +21,13 @@
 
     <%= f.label :image %>
     <%= f.url_field :image %>
+
+    <%= f.label :club_id %>
+    <%= f.select :club_id, Club.pluck(:name, :id), :include_blank => true %>
+
+    <%= f.label :national_team_id %>
+    <%= f.select :national_team_id, NationalTeam.pluck(:name, :id), :include_blank => true %>
+
 
     <%# f.label :artist_id %>
     <%# f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %> <%#what will be sent to params # order matters in pluck - gives you all artist and id # gives you back a select menue # %>

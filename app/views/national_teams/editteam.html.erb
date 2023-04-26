@@ -2,3 +2,5 @@
 <h1> You are editing <%= @national_team.name %> </h1>
 
 <%= render :partial => 'form' %>
+
+<%= link_to "Delete Team", @national_team, :method => :delete, :data => { :confirm => 'Are you sure?' } %>

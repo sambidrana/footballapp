@@ -1,6 +1,16 @@
 class NationalTeamsController < ApplicationController
   def index
-    @national_teams = NationalTeam.all
+    @national_teams = NationalTeam.all.order(:name)
+
+  end
+
+  def new 
+    @national_team = NationalTeam.new
+  end
+
+  def create 
+    national_team = NationalTeam.create national_team_params
+    redirect_to national_team #redirect to players?
 
   end
 
@@ -11,7 +21,7 @@ class NationalTeamsController < ApplicationController
 
 
   def edit
-    @national_teams = NationalTeam.all
+    @national_teams = NationalTeam.all.order(:name)
   end
 
   def editteam
@@ -24,6 +34,12 @@ class NationalTeamsController < ApplicationController
     national_team.update national_team_params
     redirect_to national_team
 
+  end
+
+  def destroy
+    national_team = NationalTeam.find params[:id]
+    national_team.destroy
+    redirect_to national_teams_path
   end
 
   private
