@@ -1,4 +1,26 @@
+<nav>
+    <%= link_to "National Teams", national_teams_path %> |
+    <%= link_to "PL Clubs", clubs_path %>
+</nav>
+
 <h1><%= @national_team.name %></h1>
 
-<p>Coach: <%= @national_team.coach %></p>
-<p>Cups Won: <%= @national_team.cups_won %></p>
+<%= image_tag @national_team.logo if @national_team.logo.present?  %>
+
+<ul>
+    <li> Coach: <%= @national_team.coach %>  </li>
+    <li> Fifa Ranking: <%= @national_team.cups_won %> </li>
+</ul>
+
+<h3>Current Squal</h3>
+
+
+    <% if @players.present?  %>
+<ul>
+    <% @players.each do |player| %> 
+    
+    <li> <%= link_to player.name, player_path(player.id) %></li>
+
+    <% end %>
+</ul>
+    <% end%>

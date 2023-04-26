@@ -6,8 +6,10 @@
     <li>Position: <%= @player.position %> </li>
     <li>Club Appreaences: <%= @player.appearances %>  </li>
     <li>DOB: <%= @player.dob %>  </li>
-    <li>Career goals: <%= @player.career_goals %>  </li>
+    <li>Career goals for : <%= @player.career_goals %>  </li>
     
+    <li> Playing for: <%= link_to @player.club.name, club_path(@player.club_id) %> </li>
+    <li>Club id: <%= @player.club_id  %> </li>
  
 
 </ul>
