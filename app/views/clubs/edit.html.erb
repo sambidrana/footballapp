@@ -1,2 +1,8 @@
-<h1>Clubs#edit</h1>
-<p>Find me in app/views/clubs/edit.html.erb</p>
+<h1>Edit Club</h1>
+
+    <% @clubs.each do |club|%>
+<ul>
+    <li> <%= link_to club.name, editclub_club_path(club.id) %> </li>
+</ul>
+
+<% end%>

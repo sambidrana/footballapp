@@ -1,0 +1,28 @@
+
+<%= form_for @club do |f| %>
+ <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+
+    <%= f.label :titles_won %>
+    <%= f.text_field :titles_won %>
+
+    <%= f.label :stadium_cap, 'Stadium Capacity' %>
+    <%= f.text_field :stadium_cap %>
+
+    <%= f.label :current_manager %>
+    <%= f.text_field :current_manager %>
+
+    <%= f.label :logo %>
+    <%= f.text_field :logo %>
+
+
+    <%# f.label :artist_id %>
+    <%# f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %> <%#what will be sent to params # order matters in pluck - gives you all artist and id # gives you back a select menue # %>
+    <%# show them the names but the value sent to the server is the id # include_blank - gives a blank in selector%>
+    <%= f.submit %>
+
+<% end%>
+

@@ -1,0 +1,11 @@
+
+<h1>Edit National Teams</h1>
+
+<ul>
+  <% @national_teams.each do |national_team| %>
+    <li><%= link_to national_team.name, edit_national_team_path(national_team.id) %></li>
+
+  <% end %>
+</ul>
+
+ <%# editclub_club_path(club.id) %>

@@ -1,0 +1,24 @@
+
+<%= form_for @national_team do |f| %>
+ <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :coach %>
+    <%= f.text_field :coach %>
+
+    <%= f.label :cups_won, "Fifa Ranking" %>
+    <%= f.text_field :cups_won %>
+
+    <%= f.label :logo %>
+    <%= f.text_field :logo %>
+
+
+    <%# f.label :artist_id %>
+    <%# f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %> <%#what will be sent to params # order matters in pluck - gives you all artist and id # gives you back a select menue # %>
+    <%# show them the names but the value sent to the server is the id # include_blank - gives a blank in selector%>
+    <%= f.submit %>
+
+<% end%>
+
+
+
