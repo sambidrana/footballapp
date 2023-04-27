@@ -1,24 +1,20 @@
 <h1>Sign up!</h1>
 
-
-<% if @user.errors.any? %> <%#if length is empty%>
+<% if @user.errors.any? %>
     <ol>
-        <% @user.errors.full_messages.each do | msg |%>
+        <% @user.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
-        <% end%>
+        <% end %>
     </ol>
-    
-<% end%>
-
+<% end %>
 <%= form_for @user do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_password %>
-
-    <%= f.submit "Sign UP!" %>
-    <% end%>
+    
+    <%= f.label :email, :class => 'form-label' %>
+    <%= f.email_field :email, :class => 'form-control' %>
+    <%= f.label :password, :class => 'form-label' %>
+    <%= f.password_field :password, :class => 'form-control' %>
+    <%= f.label :password_confirmation, :class => 'form-label' %>
+    <%= f.password_field :password_confirmation, :class => 'form-control' %>
+    <%= f.submit "Sign up!", :class => 'btn btn-success btn-lg mt-3' %>
+    
+<% end %>

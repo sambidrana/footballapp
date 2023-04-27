@@ -1,25 +1,29 @@
 
-<nav>
-    <%= link_to "Premier League Clubs", clubs_path	 %> |
-    <%= link_to "National Teams", national_teams_path %> 
-</nav>
+<div class = 'player-show-card'>
+  
+<div class="card mt-4" style="width: 22rem;">
+<%= image_tag @player.image, :class =>  'card-img-top' if @player.image.present? %>
 
+  <div class="card-body">
+    <h4 class="card-title  mb-5"><%= @player.name %></h4>
 
-<%= image_tag @player.image if @player.image.present? %>
-<h1><%= @player.name %></h1>
+    <ul class="list-group list-group-flush">
 
-<ul>
-    <li>Position: <%= @player.position %> </li>
-    <li>Club Appreaences: <%= @player.appearances %>  </li>
-    <li>DOB: <%= @player.dob %>  </li>
-    <li>Career goals for : <%= @player.career_goals %>  </li>
-    
-    <li> Playing for: <%= link_to @player.club.name, club_path(@player.club_id) %> </li>
-    <li>Club id: <%= @player.club_id  %> </li>
+    <li class="list-group-item">Position: <%=@player.position %></li>
+    <li class="list-group-item">Club Appearances: <%= @player.appearances %></li>
+    <li class="list-group-item">D.O.B: <%= @player.dob %></li>
+    <li class="list-group-item">Club goals:  <%= @player.career_goals %></li>
+
+    <li class="list-group-item">Current club: <%= link_to @player.club.name, club_path(@player.club_id) %></li>
+    <% if @nationalteam.present?  %>
+    <li class="list-group-item">National Team: <%= link_to @nationalteam.name, national_team_path(@nationalteam.id) %> </li>
+    <% end %>
  
+    </ul>
+    <% if @current_user.present? && @current_user.admin? %>
+    <%= link_to "Edit Player",edit_player_path(@player.id), :class => 'btn btn-primary ms-4 mt-4' %>
+    <% end%>
+    </div>
+</div>
 
-</ul>
-
-<% if @nationalteam.present?  %>
-  <%= link_to @nationalteam.name, national_team_path(@nationalteam.id) %>
-<% end %>
+</div>

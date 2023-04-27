@@ -1,40 +1,47 @@
 
-<nav>
-    <%= link_to "Home", clubs_index_path %>
-</nav>
-
+<div class='mt-4'>
 <%= form_for @player do |f| %>
- <%= f.label :name %>
-    <%= f.text_field :name %>
 
-    <%= f.label :position %>
-    <%= f.text_field :position %>
+    <div class="mb-3">
+     <%= f.label :name, :class => 'form-label' %>
+    <%= f.text_field :name, :class =>"form-control mb-5", :required => true %>
+    </div>
 
-    <%= f.label :career_goals %>
-    <%= f.text_field :career_goals %>
+    <div class="mb-3">
+    <%= f.label :position, :class => 'form-label' %>
+    <%= f.text_field :position, :class =>"form-control-sm me-5" %>
 
-    <%= f.label :appearances %>
-    <%= f.text_field :appearances %>
+    
+    <%= f.label :career_goals, :class => 'form-label' %>
+    <%= f.text_field :career_goals, :class =>"form-control-sm me-5" %>
+    
+    
+    <%= f.label :appearances, :class => 'form-label' %>
+    <%= f.text_field :appearances, :class =>"form-control-sm me-5" %>
+        
+    <%= f.label :dob, :class => 'form-label' %>
+    <%= f.text_field :dob, :placeholder => 'YYYY-MM-DD', :class =>"form-control-sm" %>
+    </div>
+        
+    <div class="mb-3">
+    <%= f.label :image, :class => 'form-label' %>
+    <%= f.url_field :image, :class =>"form-control mb-5" %>
+    </div>
 
-    <%= f.label :dob %>
-    <%= f.text_field :dob %>
-
-    <%= f.label :image %>
-    <%= f.url_field :image %>
-
-    <%= f.label :club_id %>
-    <%= f.select :club_id, Club.pluck(:name, :id), :include_blank => true %>
-
-    <%= f.label :national_team_id %>
-    <%= f.select :national_team_id, NationalTeam.pluck(:name, :id), :include_blank => true %>
+    
+    <%= f.label :club_id, :class => 'form-label'%>
+    <%= f.select :club_id, Club.pluck(:name, :id), { include_blank: true }, { :class => "form-control-sm", :required => true } %>
 
 
-    <%# f.label :artist_id %>
-    <%# f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %> <%#what will be sent to params # order matters in pluck - gives you all artist and id # gives you back a select menue # %>
-    <%# show them the names but the value sent to the server is the id # include_blank - gives a blank in selector%>
-    <%= f.submit %>
+    <%= f.label :national_team_id, :class => 'form-label ms-4' %>
+    <%# f.select :national_team_id, NationalTeam.pluck(:name, :id), :include_blank => true, :class =>"form-control-sm"%>
+    <%= f.select :national_team_id, NationalTeam.pluck(:name, :id), {:include_blank => true }, { :class =>"form-control-sm"}%>
 
+   
+    <%= f.submit :class => 'btn btn-primary ms-4'  %>
+    
 <% end%>
 
+</div>
   
   

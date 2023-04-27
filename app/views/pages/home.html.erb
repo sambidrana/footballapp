@@ -1,25 +1,17 @@
-<h1>Everything Everywhere all about Football</h1>
 
 
 
+<div class=' container-sm p-5 '>
 
-<%# <>h1 login %>
-<%# form_tag login_path do %><%#when they login I wan ta POST requset # no form helper for form tag%>
-    <%# label_tag :email %>
-    <%# email_field_tag :email %>
+<h1 class='mb-5 '>OneFootball.com</h1>
 
-    <%# label_tag :password %>
-    <%# password_field_tag :password %>
+<div class='d-flex justify-content-center p-5 border border-white shadow'>
 
-    <%# submit_tag "Sign In" %>
-<%# end%>
+<h4><%= link_to "Sign Up!", new_user_path, :class => 'btn btn-success ps-4 pe-4 shadow-sm' %> <span class='h5 m-5 '> Or </span></h4>
 
-<p>
-<%= link_to "Sign UP!", new_user_path %> Or 
-</p>
+<h4><%= link_to "Sign In!",  login_path, :class => 'btn btn-primary ps-4 pe-4' %> </h4>
 
-<p>
-<%= link_to "Sign In!",  login_path %>
-</p>
+</div>
 
+</div>
 <%# users_path%>

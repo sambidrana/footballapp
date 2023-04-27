@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_action :check_for_admin, :only => [:edit, :new]
   
   def index
     @players = Player.all.order(:name)

@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    background-color: white;
+ }
+
+ .parent-container {
+   background-color: rgba(128, 128, 128, 0.124);
+   min-height: 95.5vh;
+   /* overflow: hidden; */
+ }
+
+ .player-show-card {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.logo_club_national {
+   width: 40%;
+}

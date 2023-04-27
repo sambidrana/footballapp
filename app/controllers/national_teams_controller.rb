@@ -1,4 +1,6 @@
 class NationalTeamsController < ApplicationController
+  before_action :check_for_admin, :only => [:edit, :new]
+
   def index
     @national_teams = NationalTeam.all.order(:name)
 

@@ -1,11 +1,11 @@
 
 
-<h1>Edit players</h1> <%= link_to "Add New Player", new_player_path %>
+<h1>Add or Edit players</h1> <%= link_to "Add New Player", new_player_path %>
 
 <ul>
   <% @players.each do |player| %>
     <li>
-      <%= link_to player.name,  edit_player_path(player.id) %> playing for <%= player.club.name %>
+      <%= link_to player.name,  edit_player_path(player.id) %> playing for <%#player.club.name %>
       <% if player.national_team.present? %>
         and <%= player.national_team.name %>
       <% else %>

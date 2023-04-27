@@ -1,28 +1,33 @@
 
+<div class="p-5">
 <%= form_for @club do |f| %>
- <%= f.label :name %>
-    <%= f.text_field :name %>
+    <div class="mb-3">
+     <%= f.label :name, :class => 'form-label ' %>
+    <%= f.text_field :name, :class =>"form-control", :required => true %>
+    </div>
 
-    <%= f.label :location %>
-    <%= f.text_field :location %>
+    <div class="mb-3">
+    <%= f.label :location, :class => 'form-label' %>
+    <%= f.text_field :location, :class => 'form-control' %>
+    </div>
+    
 
-    <%= f.label :titles_won %>
-    <%= f.text_field :titles_won %>
+    <%= f.label :logo, 'Club Logo', :class => 'form-label'  %>
+    <%= f.text_field :logo, :placeholder => 'URL', :class => 'form-control' %>
+    
+    <div class="mt-5">
+    <%= f.label :titles_won, :class => 'form-label' %>
+    <%= f.text_field :titles_won, :class => 'form-control-sm me-4' %>
 
-    <%= f.label :stadium_cap, 'Stadium Capacity' %>
-    <%= f.text_field :stadium_cap %>
+    <%= f.label :stadium_cap, 'Stadium Capacity', :class => 'form-label' %>
+    <%= f.text_field :stadium_cap, :class => 'form-control-sm  me-4' %>
 
-    <%= f.label :current_manager %>
-    <%= f.text_field :current_manager %>
+    <%= f.label :current_manager, :class => 'form-label' %>
+    <%= f.text_field :current_manager, :class => 'form-control-sm me-4' %>
 
-    <%= f.label :logo %>
-    <%= f.text_field :logo %>
-
-
-    <%# f.label :artist_id %>
-    <%# f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %> <%#what will be sent to params # order matters in pluck - gives you all artist and id # gives you back a select menue # %>
-    <%# show them the names but the value sent to the server is the id # include_blank - gives a blank in selector%>
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-primary ' %>
+    </div>
 
 <% end%>
 
+</div>

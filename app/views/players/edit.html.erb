@@ -2,4 +2,6 @@
 
 <%= render :partial => 'form' %>
 
-<%= link_to "Delete Player", @player, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+<div>
+<%= link_to "Delete Player", @player, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-danger mt-5 ms-4' %>
+</div>

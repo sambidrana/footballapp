@@ -1,6 +1,6 @@
 
-<h1> You are editing <%= @club.name %> details </h1>
+<h1> Edit <span class='text-primary'><%= @club.name %></span> details </h1>
 
 <%= render :partial => 'form' %>
 
-<%= link_to "Delete Club", @club, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+<%= link_to "Delete Club", @club, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-danger mt-5 ms-5' %>

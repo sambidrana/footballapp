@@ -1,12 +1,22 @@
 
-<nav>
-    <%= link_to "Premier League Clubs", clubs_path	 %>
-</nav>
 
+<div class='p-5'>
+
+<div class='d-flex align-items-center mb-3'>
 <h1>All National Teams</h1>
 
+
+   <% if @current_user.present? && @current_user.admin? %>
+  <%= link_to "Add New Team", new_national_team_path, :class => 'btn btn-primary ms-4' %>
+  <% end%>
+</div>
+
+<div>
 <ul>
   <% @national_teams.each do |national_team| %>
-    <li><%= link_to national_team.name, national_team_path(national_team) %></li>
+    <li class='mb-2'><%= link_to national_team.name, national_team_path(national_team), :class => 'text-decoration-none' %></li>
   <% end %>
 </ul>
+</div>
+
+</div>

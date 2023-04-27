@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  # before_action :check_for_admin, :only => [:edit, :new]
     def index
         @users = User.all
     end
@@ -9,16 +9,15 @@ class UsersController < ApplicationController
     end
 
     def create
-        # user = User.create user_params #creates it in mempry and tries to put in the database - break it into 2 steps
         @user = User.new user_params
         if @user.save
           session[:user_id] = @user.id #user should be taken to login page
           # redirect_to root_path #change the path aftger user logs in ---- --- ---
           redirect_to clubs_index_path
         else
-          render :new #putting the @ means the content filled will be shown again
+          render :new 
         end
-        # tell the user waht went wrong
+
       end
     
       private
