@@ -1,25 +1,23 @@
 
 
-<div  class='d-flex align-items-center'>
-
-<h1 class='m-4' > <%= @club.name %> </h1>
-<% if @current_user.present? && @current_user.admin? %>
- <%= link_to "Edit Club", editclub_club_path(@club.id), :class => 'btn btn-primary ms-4'   %>
- <% end%>
- </div>
+<div class='d-flex align-items-center'>
+    <h1 class='m-4' > <%= @club.name %> </h1>
+    <% if @current_user.present? && @current_user.admin? %>
+    <%= link_to "Edit Club", editclub_club_path(@club.id), :class => 'btn btn-primary ms-4'   %>
+    <% end%>
+</div>
 
 
 <h4 class='ms-4'> <%= @club.location %> </h4>
 
-
 <ul class='list-unstyled ms-4'>
     <li>Current Manager: <%= @club.current_manager %>  </li>
     <li>Titles Won: <%= @club.titles_won %>  </li>
-    <li>Stadium Capacity: <%= @club.stadium_cap %>  </li>
+    <li>Stadium Capacity: <%= number_with_delimiter(@club.stadium_cap) %>  </li>
 </ul>
 
 
-<div  class='d-flex align-items-center mt-5'>
+<div class='d-flex align-items-center mt-5'>
     <h4 class='ms-4' >Current Squad</h4> 
     <% if @current_user.present? && @current_user.admin? %>
     <%= link_to 'Add Player', new_player_path, :class => 'btn btn-primary ms-4' %>

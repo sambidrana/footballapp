@@ -1,4 +1,5 @@
-<h1>Sign up!</h1>
+<div class="p-5">
+<h1 class='mb-3'>Sign up!</h1>
 
 <% if @user.errors.any? %>
     <ol>
@@ -7,6 +8,7 @@
         <% end %>
     </ol>
 <% end %>
+<div class='p-5'>
 <%= form_for @user do |f| %>
     
     <%= f.label :email, :class => 'form-label' %>
@@ -15,6 +17,9 @@
     <%= f.password_field :password, :class => 'form-control' %>
     <%= f.label :password_confirmation, :class => 'form-label' %>
     <%= f.password_field :password_confirmation, :class => 'form-control' %>
-    <%= f.submit "Sign up!", :class => 'btn btn-success btn-lg mt-3' %>
+    <%= f.submit "Sign up!", :class => 'btn btn-success btn-lg mt-4' %>
     
 <% end %>
+
+</div>
+</div>

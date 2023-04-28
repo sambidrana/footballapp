@@ -1,7 +1,9 @@
-<h1>Edit Player</h1>
+<div class='p-5'>
+    <h1>Edit <span class='text-primary'><%= @player.name %>'s</span> details</h1>
 
-<%= render :partial => 'form' %>
+    <%= render :partial => 'form' %>
 
-<div>
-<%= link_to "Delete Player", @player, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-danger mt-5 ms-4' %>
+    <div>
+        <%= link_to "Delete Player", @player, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-danger mt-5 ms-4' %>
+    </div>
 </div>

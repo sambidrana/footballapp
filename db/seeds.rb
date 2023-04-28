@@ -1,7 +1,7 @@
 
 #2 users - should be admin, atleast 1 should be admin
 User.destroy_all
-u1 = User.create :email => 'aa@ga.co', :password => 'chicken' , :admin => true #- to make admin - doing it from the console
+u1 = User.create :email => 'aa@ga.co', :password => 'chicken' , :admin => true #- to make admin
 u2 = User.create :email => 'ac@ga.co', :password => 'chicken'
 puts "#{ User.count } users"
 
@@ -112,6 +112,7 @@ puts "#{ Club.count } Clubs created"
 
 
 ######## Associations ########
+#append player to country and club 
 #argentina 
 
 argentina.players << man_utd4 #lisandro Martinez
@@ -249,6 +250,7 @@ switzerland.players << new_utd4
 newcastle_utd.players << new_utd4
 
 #Players without national team
+#append  players to club 
 manchester_city.players << man_city10
 manchester_united.players << man_utd7
 manchester_united.players << man_utd2
