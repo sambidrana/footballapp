@@ -18,6 +18,8 @@ OneFootball.com was built using the following technologies:
 ### Acknowledgement
 A special thanks to **CJ**, **Joel**, **Mark**, and **Tina** for their support and guidance throughout the project.
 
+### Note for Tina
+The admin user is 'aa@ga.co'
 
 
 
