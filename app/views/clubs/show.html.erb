@@ -1,7 +1,7 @@
 
 
 <div class='d-flex align-items-center'>
-    <h1 class='m-4' > <%= @club.name %> </h1>
+    <h1 class='m-4' > <strong> <%= @club.name %> </strong> </h1>
     <% if @current_user.present? && @current_user.admin? %>
     <%= link_to "Edit Club", editclub_club_path(@club.id), :class => 'btn btn-primary ms-4'   %>
     <% end%>

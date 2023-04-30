@@ -2,7 +2,7 @@
 <div class='p-4'>
 
     <div class="d-flex align-items-center mb-3">
-        <h1><%= @national_team.name %></h1>
+        <h1> <strong> <%= @national_team.name %> </strong> </h1>
         <% if @current_user.present? && @current_user.admin? %>
            <%= link_to "Edit National Team", edit_national_team_path(@national_team.id), :class => 'btn btn-primary ms-4'  %> 
         <% end%>
