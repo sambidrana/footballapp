@@ -1,7 +1,7 @@
-# OneFootball.com
+# Everything, Everywhere - All About Football
 
 ### Description
-OneFootball.com is a web application for football lovers all around the world that lets you check the current Premier League clubs and their stats. You can check how many titles your club has won till now and view the players associated with the club. You can check out their contribution for the club and if they are called up for national duties or not. It's a great way to keep yourself updated about your club and rivals.
+Everything, Everywhere - All About Football is a web application for football lovers all around the world that lets you check the current Premier League clubs and their stats. You can check how many titles your club has won till now and view the players associated with the club. You can check out their contribution for the club and if they are called up for national duties or not. It's a great way to keep yourself updated about your club and rivals.
 
 
 ### Technologies Used
